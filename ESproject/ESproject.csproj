@@ -168,6 +168,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="UI\Images\7-noise-texture-overlays-3.png" />
     <Content Include="UI\Images\rexlogin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

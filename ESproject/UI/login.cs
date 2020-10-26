@@ -18,6 +18,7 @@ namespace ESproject
         public login()
         {
             InitializeComponent();
+            this.Show();
             intentosLogin = 0;
         }
 
@@ -45,6 +46,7 @@ namespace ESproject
                 if (intentosLogin >= 2)
                 {
                     Form captcha = new Captcha();
+                    this.Hide();
                 }
                 intentosLogin++;
                 //loadingLabel.Visible = false;

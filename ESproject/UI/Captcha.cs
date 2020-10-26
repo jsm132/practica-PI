@@ -27,9 +27,9 @@ namespace ESproject.UI
             Random r1 = new Random();
             number = r1.Next(100, 1000);
             var image = new Bitmap(this.pictureBox1.Width, this.pictureBox1.Height);
-            var font = new Font("TimesNewRoman", 25, FontStyle.Bold, GraphicsUnit.Pixel);
+            var font = new Font("Mistral", 25, FontStyle.Italic, GraphicsUnit.Pixel);
             var graphics = Graphics.FromImage(image);
-            graphics.DrawString(number.ToString(), font, Brushes.Green, new Point(0, 0));
+            graphics.DrawString(number.ToString(), font, Brushes.Red, new Point(0, 0));
             pictureBox1.Image = image;
             return number.ToString();
         }
@@ -39,10 +39,12 @@ namespace ESproject.UI
             if(!textBox1.Text.Equals(captchaValue))
             {
                 captchaValue = generateCaptcha();
+                label2.Visible = true;
             }
             else
             {
-            this.Hide();
+                Form login = new login();
+                this.Hide();
             }
 
         }

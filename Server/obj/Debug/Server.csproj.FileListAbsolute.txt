@@ -36,4 +36,3 @@ C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\Server\obj\D
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\Server\obj\Debug\Server.exe
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\Server\obj\Debug\Server.pdb
-C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\Server\obj\Debug\Server.csprojAssemblyReference.cache

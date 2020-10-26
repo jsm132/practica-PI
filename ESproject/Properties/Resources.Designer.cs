@@ -61,11 +61,12 @@ namespace ESproject.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a .
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static string workPath {
+        internal static System.Drawing.Bitmap _7_noise_texture_overlays_3 {
             get {
-                return ResourceManager.GetString("workPath", resourceCulture);
+                object obj = ResourceManager.GetObject("7-noise-texture-overlays-3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
