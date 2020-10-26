@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "w8vqyQcTdY894AHoa9Tnu0Or1e8JWKazVKnI/ZnJfc1VH7TkM+0TwczoagE+hIMQxK7HpPlj+ghXARLjhRoSeA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\soto\\Desktop\\Entrega ES - Murcia, Soto, Vicedo\\ESproject\\ESproject\\Cliente\\ClientePruebas.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\soto\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

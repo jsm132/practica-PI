@@ -1,0 +1,36 @@
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\bin\Debug\ESproject.exe
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\bin\Debug\ESproject.pdb
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\bin\Debug\Newtonsoft.Json.dll
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\bin\Debug\Newtonsoft.Json.xml
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.login.resources
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.Properties.Resources.resources
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.UI.MainUI.resources
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.UI.Register.resources
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.UI.schedule.resources
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.UI.ScheduleList.resources
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.UI.SecondStepUI.resources
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.UI.Work.resources
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.csproj.GenerateResource.cache
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.csproj.CopyComplete
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.exe
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.pdb
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.UI.JobList.resources
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\ESproject\obj\Debug\ESproject.csprojAssemblyReference.cache
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\bin\Debug\ESproject.exe
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\bin\Debug\ESproject.pdb
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\bin\Debug\Newtonsoft.Json.dll
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\bin\Debug\Newtonsoft.Json.xml
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.UI.JobList.resources
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.login.resources
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.Properties.Resources.resources
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.UI.MainUI.resources
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.UI.Register.resources
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.UI.schedule.resources
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.UI.ScheduleList.resources
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.UI.SecondStepUI.resources
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.UI.Work.resources
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.csproj.GenerateResource.cache
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.csproj.CoreCompileInputs.cache
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.csproj.CopyComplete
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.exe
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\ESproject\obj\Debug\ESproject.pdb

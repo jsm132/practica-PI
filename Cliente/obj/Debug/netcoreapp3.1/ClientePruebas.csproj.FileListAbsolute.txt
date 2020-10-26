@@ -1,0 +1,32 @@
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.exe
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.deps.json
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.runtimeconfig.json
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.runtimeconfig.dev.json
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.dll
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.pdb
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\bin\Debug\netcoreapp3.1\ESproject.exe
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\bin\Debug\netcoreapp3.1\ESproject.pdb
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.csprojAssemblyReference.cache
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.AssemblyInfoInputs.cache
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.AssemblyInfo.cs
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.csproj.CopyComplete
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.dll
+D:\Universidad\cuarto año\ES\nuevo\ESCloud\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.pdb
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.exe
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.deps.json
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.runtimeconfig.json
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.runtimeconfig.dev.json
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.dll
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.pdb
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\bin\Debug\netcoreapp3.1\ESproject.exe
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\bin\Debug\netcoreapp3.1\ESproject.pdb
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.csprojAssemblyReference.cache
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.csproj.CoreCompileInputs.cache
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.AssemblyInfoInputs.cache
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.AssemblyInfo.cs
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.csproj.CopyComplete
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.dll
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.pdb
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\ESproject\ESproject\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.genruntimeconfig.cache
