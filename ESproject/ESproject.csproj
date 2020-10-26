@@ -61,6 +61,12 @@
     <Compile Include="Schedule\Day.cs" />
     <Compile Include="Schedule\Plan.cs" />
     <Compile Include="Schedule\Schedule.cs" />
+    <Compile Include="UI\Captcha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Captcha.Designer.cs">
+      <DependentUpon>Captcha.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\JobList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="Backup\Work.cs" />
+    <EmbeddedResource Include="UI\Captcha.resx">
+      <DependentUpon>Captcha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\JobList.resx">
       <DependentUpon>JobList.cs</DependentUpon>
     </EmbeddedResource>

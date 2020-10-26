@@ -27,12 +27,18 @@ namespace Server._2FA
                 if (e.Message.Text == "/codigo")
                 {
                     bot.SendTextMessageAsync(e.Message.Chat.Id, "su código de autenticación es: " + this.code);
+                    Console.WriteLine(e.Message.Chat.Username); //guardar el username en el json de users y hacer un if aqui que compruebe el usuario
                 }
                 else
                 {
                     bot.SendTextMessageAsync(e.Message.Chat.Id, "Comando no reconocido, escriba /codigo para reclamar su código de autenticación.");
                 }
             }
+        }
+
+        public void botStop()
+        {
+            bot.StopReceiving();
         }
     }
 }

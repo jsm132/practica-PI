@@ -21,11 +21,14 @@ namespace ESproject
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new login());
-           /* }
-            catch (Exception e) {
-                MessageBox.Show(e.Message, "Error",
-                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+            //Application.ApplicationExit += CloseTelegramBot;
+            /* }
+             catch (Exception e) {
+                 MessageBox.Show(e.Message, "Error",
+                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }*/
         }
+
+        
     }
 }

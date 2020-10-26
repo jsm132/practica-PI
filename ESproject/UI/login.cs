@@ -14,10 +14,13 @@ namespace ESproject
 {
     public partial class login : Form
     {
+        int intentosLogin;
         public login()
         {
             InitializeComponent();
+            intentosLogin = 0;
         }
+
 
         private void register_button_Click(object sender, EventArgs e)
         {
@@ -39,11 +42,17 @@ namespace ESproject
             {
                 error_message_label.Text = serverMessage;
                 error_message_label.Visible = true;
+                if (intentosLogin >= 2)
+                {
+                    Form captcha = new Captcha();
+                }
+                intentosLogin++;
                 //loadingLabel.Visible = false;
-                //Cliente.closeConnection();//si no se pone, se congela la comunicación
+                Cliente.closeConnection();//si no se pone, se congela la comunicación
             }
             else if (serverMessage.Equals("Login correcto"))
             {
+                intentosLogin = 0;
                 // abrir ventana de 2ndstep para meter el código
                 Form secondStep = new SecondStepUI();
                 

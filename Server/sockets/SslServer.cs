@@ -314,6 +314,7 @@ namespace Server {
                     else
                         WriteMessage("El código es incorrecto");
                 }
+                bot.botStop();
             }
             else // el login ha fallado
             {
