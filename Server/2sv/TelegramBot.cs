@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Server.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,14 @@ namespace Server._2FA
     {
         static TelegramBotClient bot = new TelegramBotClient("1117925050:AAEetlNxB6kGWH2aywNZgqsdzwnvOaR5rPI");
         string code = "";
+        public string actualUsername = "";
 
-        public void init(string code)
+        public void init(string code,  string telegramUsername)
         {
             this.code = code;
             bot.StartReceiving();
             bot.OnMessage += bot_onMessage;
+            actualUsername = telegramUsername;
         }
 
         private void bot_onMessage(object sender, Telegram.Bot.Args.MessageEventArgs e)
@@ -26,8 +29,13 @@ namespace Server._2FA
             {
                 if (e.Message.Text == "/codigo")
                 {
-                    bot.SendTextMessageAsync(e.Message.Chat.Id, "su código de autenticación es: " + this.code);
-                    Console.WriteLine(e.Message.Chat.Username); //guardar el username en el json de users y hacer un if aqui que compruebe el usuario
+                    if (e.Message.Chat.Username.Equals(actualUsername))
+                    {
+                        bot.SendTextMessageAsync(e.Message.Chat.Id, "Bienvenido/a " + actualUsername + " su código de autenticación es: " + this.code);
+                    }else
+                    {
+                        bot.SendTextMessageAsync(e.Message.Chat.Id, "Usted no se encuentra actualmente en el proceso de autenticación, por lo que no se le enviará ningún código.");
+                    }
                 }
                 else
                 {

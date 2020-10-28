@@ -36,5 +36,19 @@ namespace ESproject._2FA
             Cliente.closeConnection();
             return respuestaServidor;
         }
+
+        public static string getTelegramUsername(string mail)
+        {
+            Messages.ClientMessage message = new Messages.ClientMessage();
+            message.action = "getTelegramUsername";
+            message.message.Add("mail", mail);
+
+            string registerMessage = JsonConvert.SerializeObject(message);
+
+            Cliente.RunClient("localhost", "DESKTOP-IKVSN1R");
+            string respuestaServidor = Cliente.WriteMessage(registerMessage);
+            Cliente.closeConnection();
+            return respuestaServidor;
+        }
     }
 }

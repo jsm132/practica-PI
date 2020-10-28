@@ -8,7 +8,7 @@ namespace ESproject.Login
 {
     class Login
     { 
-       public static string LoginClient(string mail, string password, string secondFA)
+       public static string LoginClient(string mail, string password, string secondFA, string telegramUser)
        {
             Messages.ClientMessage message = new Messages.ClientMessage();
             message.action = "login";
@@ -21,6 +21,7 @@ namespace ESproject.Login
 
             message.message.Add("password", password);
             message.message.Add("secondFA", secondFA);
+            message.message.Add("telegramUser", telegramUser);
 
             string loginMessage = JsonConvert.SerializeObject(message);
 

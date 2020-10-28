@@ -32,6 +32,7 @@ namespace ESproject
         private void login_button_Click(object sender, EventArgs e)
         {
             string secondFA = "NO";
+            string telegramUser = "";
             string mail = user_textbox.Text;
             string password = password_textbox.Text;
 
@@ -40,9 +41,10 @@ namespace ESproject
             if (SecondFA.checkIf2FAIsActivated(mail).Equals("El segundo factor de autenticación está activado para este usuario."))
             {
                 secondFA = "YES";
+                telegramUser = SecondFA.getTelegramUsername(mail);
             }
 
-            string serverMessage = Login.Login.LoginClient(mail, password, secondFA);
+            string serverMessage = Login.Login.LoginClient(mail, password, secondFA, telegramUser);
             
             if (serverMessage.Equals("El usuario o la contraseña no son correctos"))
             {
