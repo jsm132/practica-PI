@@ -71,6 +71,9 @@ namespace Server {
                     case "login":
                         Login(clientMessage.message["mail"], clientMessage.message["password"]);
                         break;
+                    case "activate2FA":
+                        Activate2FA(clientMessage.message["mail"], clientMessage.message["telegramUser"]);
+                        break;
                     case "upload":
                         SaveFile(Int32.Parse(clientMessage.message["fileSize"]), clientMessage.message["fileName"], clientMessage.message["user"]);
                         break;
@@ -237,7 +240,7 @@ namespace Server {
                 password = KeyManager.KeyManager.getHash(password, salt);
 
                 User.Salt userSalt = new User.Salt(mail, salt);
-                User.User user = new User.User(mail, password);
+                User.User user = new User.User(mail, password, "NO", "");
 
                 users.Add(user);
                 salts.Add(userSalt);
@@ -253,6 +256,52 @@ namespace Server {
  
             WriteMessage(serverMessage);
         }
+
+        static void Activate2FA(string mail, string telegramUser)
+        {
+            bool userFound = false;
+            User.User UserToModify = null;
+            User.User modifiedUser = null;
+            string serverMessage = "";
+            string pathUser = "Database\\users.json";
+            List<User.User> users = new List<User.User>();
+            string jsonFile = System.IO.File.ReadAllText(pathUser);
+
+            if(jsonFile.Length > 0)
+            {
+                users = JsonConvert.DeserializeObject<List<User.User>>(jsonFile);
+
+                foreach (User.User user in users)
+                {
+                    if (user.mail.Equals(mail))
+                    {
+                        userFound = true;
+                        UserToModify = user;
+                        modifiedUser = new User.User(user.mail, user.password, "YES", telegramUser);
+                        serverMessage = "Segundo factor activado";
+                    }
+                }
+
+                if(userFound == true)
+                {
+                    users.Remove(UserToModify);
+                    users.Add(modifiedUser);
+                    string userJson = JsonConvert.SerializeObject(users);
+                    System.IO.File.WriteAllText(pathUser, userJson);
+                }
+                else
+                {
+                    serverMessage = "Error inesperado, el usuario actual no existe.";
+                }
+            }
+            else
+            {
+                serverMessage = "Error, no existe ningún usuario en la base de datos";
+            }
+
+            WriteMessage(serverMessage);
+        }
+
         static void Login(string mail, string password)
         {         
             string pathUser = "Database\\users.json";
@@ -292,8 +341,6 @@ namespace Server {
 
             if (userMail.Equals(mail) && userPassword.Equals(password) && registered)
             {
-
-                
 
                 serverMessage = "Login correcto";
                 TelegramBot bot = new TelegramBot();

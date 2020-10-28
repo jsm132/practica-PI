@@ -48,6 +48,7 @@
             this.algorithm_textbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.infoLabel = new System.Windows.Forms.Label();
+            this.opcionesDeCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,7 +148,8 @@
             // 
             this.opcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.planificaciónToolStripMenuItem1,
-            this.verTrabajosToolStripMenuItem});
+            this.verTrabajosToolStripMenuItem,
+            this.opcionesDeCuentaToolStripMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
             this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.opcionesToolStripMenuItem.Text = "Opciones";
@@ -229,6 +231,13 @@
             this.infoLabel.Text = "label2";
             this.infoLabel.Visible = false;
             // 
+            // opcionesDeCuentaToolStripMenuItem
+            // 
+            this.opcionesDeCuentaToolStripMenuItem.Name = "opcionesDeCuentaToolStripMenuItem";
+            this.opcionesDeCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.opcionesDeCuentaToolStripMenuItem.Text = "Opciones de cuenta";
+            this.opcionesDeCuentaToolStripMenuItem.Click += new System.EventHandler(this.opcionesDeCuentaToolStripMenuItem_Click);
+            // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,5 +291,6 @@
         private System.Windows.Forms.TextBox algorithm_textbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label infoLabel;
+        private System.Windows.Forms.ToolStripMenuItem opcionesDeCuentaToolStripMenuItem;
     }
 }

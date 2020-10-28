@@ -53,3 +53,6 @@ C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\ESproject\ob
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\ESproject\obj\Debug\ESproject.exe
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\ESproject\obj\Debug\ESproject.pdb
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\ESproject\obj\Debug\ESproject.UI.Captcha.resources
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\ESproject\obj\Debug\ESproject.UI.Activate2FA.resources
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\ESproject\obj\Debug\ESproject.UI.TelegramUsernameExplanation.resources
+C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\ESproject\obj\Debug\ESproject.UI.UserOptions.resources

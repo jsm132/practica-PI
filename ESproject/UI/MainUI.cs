@@ -121,5 +121,10 @@ namespace ESproject.UI
                 algorithm_textbox.Text = backup_list.SelectedItem.ToString().Split('_')[3];
             }
         }
+
+        private void opcionesDeCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form useropt = new UserOptions();
+        }
     }
 }

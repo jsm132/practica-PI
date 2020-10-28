@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2FA\SecondFA.cs" />
     <Compile Include="Backup\checker.cs" />
     <Compile Include="Backup\Archivo.cs" />
     <Compile Include="FileManager\Cifrado\Crypto.cs" />
@@ -61,6 +62,12 @@
     <Compile Include="Schedule\Day.cs" />
     <Compile Include="Schedule\Plan.cs" />
     <Compile Include="Schedule\Schedule.cs" />
+    <Compile Include="UI\Activate2FA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Activate2FA.Designer.cs">
+      <DependentUpon>Activate2FA.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Captcha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +118,18 @@
     <Compile Include="UI\SecondStepUI.Designer.cs">
       <DependentUpon>SecondStepUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\TelegramUsernameExplanation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TelegramUsernameExplanation.Designer.cs">
+      <DependentUpon>TelegramUsernameExplanation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UserOptions.Designer.cs">
+      <DependentUpon>UserOptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Work.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +138,9 @@
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="Backup\Work.cs" />
+    <EmbeddedResource Include="UI\Activate2FA.resx">
+      <DependentUpon>Activate2FA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Captcha.resx">
       <DependentUpon>Captcha.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +174,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SecondStepUI.resx">
       <DependentUpon>SecondStepUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TelegramUsernameExplanation.resx">
+      <DependentUpon>TelegramUsernameExplanation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserOptions.resx">
+      <DependentUpon>UserOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Work.resx">
       <DependentUpon>Work.cs</DependentUpon>

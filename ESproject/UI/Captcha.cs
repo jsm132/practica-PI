@@ -25,7 +25,7 @@ namespace ESproject.UI
         {
             var number = 0;
             Random r1 = new Random();
-            number = r1.Next(100, 1000);
+            number = r1.Next(1000, 9999);
             var image = new Bitmap(this.pictureBox1.Width, this.pictureBox1.Height);
             var font = new Font("Mistral", 25, FontStyle.Italic, GraphicsUnit.Pixel);
             var graphics = Graphics.FromImage(image);
