@@ -57,7 +57,7 @@ namespace ESproject
                 }
                 intentosLogin++;
                 //loadingLabel.Visible = false;
-                Cliente.closeConnection();//si no se pone, se congela la comunicación
+                //Cliente.closeConnection();//si no se pone, se congela la comunicación
             }
             else if (serverMessage.Equals("Login correcto"))
             {
