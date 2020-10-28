@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using ESproject.Login;
 using System.Threading;
+using ESproject._2FA;
 
 namespace ESproject
 {
@@ -30,14 +31,18 @@ namespace ESproject
 
         private void login_button_Click(object sender, EventArgs e)
         {
+            string secondFA = "NO";
             string mail = user_textbox.Text;
             string password = password_textbox.Text;
 
             error_message_label.Visible = false;
 
-            // comprobar existe usuario y contraseñas iguales, si correcto 2nd step
-            
-            string serverMessage = Login.Login.LoginClient(mail, password);
+            if (SecondFA.checkIf2FAIsActivated(mail).Equals("El segundo factor de autenticación está activado para este usuario."))
+            {
+                secondFA = "YES";
+            }
+
+            string serverMessage = Login.Login.LoginClient(mail, password, secondFA);
             
             if (serverMessage.Equals("El usuario o la contraseña no son correctos"))
             {
@@ -56,12 +61,19 @@ namespace ESproject
             {
                 intentosLogin = 0;
                 // abrir ventana de 2ndstep para meter el código
-                Form secondStep = new SecondStepUI();
+                if (secondFA.Equals("YES"))
+                {
+                    Form second = new SecondStepUI();
+                }
+                else
+                {
+                    Form main = new MainUI();
+                }
+                
                 
                 loadingLabel.Visible = true;
-                AutoClosingMessageBox.Show("Inicio de sesión con éxito", "Inicio de sesión", 1); //Creedme que esto hace falta aquí, no por enseñar que el login ha sido correcto, si no por un oscuro uso oculto
+                AutoClosingMessageBox.Show("Inicio de sesión con éxito", "Inicio de sesión", 1);
                 //MessageBox.Show("Cargando datos del usuario. Espere por favor...");
-                //Form main = new MainUI();
                 this.Hide();
                 
             } 

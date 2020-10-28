@@ -69,10 +69,13 @@ namespace Server {
                         Register(clientMessage.message["mail"], clientMessage.message["password"]);
                         break;
                     case "login":
-                        Login(clientMessage.message["mail"], clientMessage.message["password"]);
+                        Login(clientMessage.message["mail"], clientMessage.message["password"], clientMessage.message["secondFA"]);
                         break;
                     case "activate2FA":
                         Activate2FA(clientMessage.message["mail"], clientMessage.message["telegramUser"]);
+                        break;
+                    case "check2FAStatus":
+                        check2FAStatus(clientMessage.message["mail"]);
                         break;
                     case "upload":
                         SaveFile(Int32.Parse(clientMessage.message["fileSize"]), clientMessage.message["fileName"], clientMessage.message["user"]);
@@ -302,7 +305,42 @@ namespace Server {
             WriteMessage(serverMessage);
         }
 
-        static void Login(string mail, string password)
+        static void check2FAStatus(string mail)
+        {
+            string serverMessage = "";
+            string pathUser = "Database\\users.json";
+            List<User.User> users = new List<User.User>();
+            string jsonFile = System.IO.File.ReadAllText(pathUser);
+
+            if (jsonFile.Length > 0)
+            {
+                users = JsonConvert.DeserializeObject<List<User.User>>(jsonFile);
+
+                foreach (User.User user in users)
+                {
+                    if (user.mail.Equals(mail))
+                    {
+                        if (user.activated2FA.Equals("YES"))
+                        {
+
+                            serverMessage = "El segundo factor de autenticación está activado para este usuario.";
+                        }
+                        else
+                        {
+                            serverMessage = "El segundo factor de autenticación NO está activado para este usuario.";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                serverMessage = "Error, no existe ningún usuario en la base de datos";
+            }
+
+            WriteMessage(serverMessage);
+        }
+
+        static void Login(string mail, string password, string secondFA)
         {         
             string pathUser = "Database\\users.json";
             string pathSalt = "Database\\salts.json";
@@ -343,25 +381,30 @@ namespace Server {
             {
 
                 serverMessage = "Login correcto";
-                TelegramBot bot = new TelegramBot();
-                SecondStep ss = new SecondStep();
-                bot.init(ss.getCode());
+                
                 WriteMessage(serverMessage);
 
-                while(true) 
+                if (secondFA.Equals("YES"))
                 {
-                    string codeStep = ReadMessage();
-                    Server.Messages.ServerMessage clientMessage = JsonConvert.DeserializeObject<Server.Messages.ServerMessage>(codeStep);
-
-                    if (ss.checkCode(clientMessage.message["code"]))
+                    TelegramBot bot = new TelegramBot();
+                    SecondStep ss = new SecondStep();
+                    bot.init(ss.getCode());
+                    while (true)
                     {
-                        WriteMessage("El código es correcto");
-                        break;
+                        string codeStep = ReadMessage();
+                        Server.Messages.ServerMessage clientMessage = JsonConvert.DeserializeObject<Server.Messages.ServerMessage>(codeStep);
+
+                        if (ss.checkCode(clientMessage.message["code"]))
+                        {
+                            WriteMessage("El código es correcto");
+                            break;
+                        }
+                        else
+                            WriteMessage("El código es incorrecto");
                     }
-                    else
-                        WriteMessage("El código es incorrecto");
+                    bot.botStop();
                 }
-                bot.botStop();
+                
             }
             else // el login ha fallado
             {

@@ -8,7 +8,7 @@ namespace ESproject.Login
 {
     class Login
     { 
-       public static string LoginClient(string mail, string password)
+       public static string LoginClient(string mail, string password, string secondFA)
        {
             Messages.ClientMessage message = new Messages.ClientMessage();
             message.action = "login";
@@ -20,15 +20,17 @@ namespace ESproject.Login
             password = KeyManager.KeyManager.getLoginKey(passwordHash);
 
             message.message.Add("password", password);
+            message.message.Add("secondFA", secondFA);
 
             string loginMessage = JsonConvert.SerializeObject(message);
 
-            Cliente.RunClient("localhost", "DESKTOP-IKVSN1R");
             User.setName(mail);
             User.setCipherKey(KeyManager.KeyManager.getCipherKey(passwordHash));
+            Cliente.RunClient("localhost", "DESKTOP-IKVSN1R");
 ;           string respuestaServidor = Cliente.WriteMessage(loginMessage);
             
-            //Cliente.closeConnection(); //Arreglar second step
+            if(secondFA.Equals("NO"))
+                Cliente.closeConnection(); //Arreglar second step
             return respuestaServidor;
         }
 
