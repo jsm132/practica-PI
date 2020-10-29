@@ -39,5 +39,10 @@ namespace ESproject.UI
                 step_error_message_label.Visible = true;
             }
         }
+
+        private void step_message_label_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
