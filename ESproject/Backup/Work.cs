@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 
 //La clase debe estar en el proceso infinito
@@ -156,9 +157,11 @@ namespace ESproject {
 
             if(backupFile != null)
             {
-                Crypto cipher = new Crypto(alg, User.getCipherKey());
                 //AÑADIR AL NOMBRE DE ARCHIVO, EL TIPO DE COPIA (INC, FULL)
                 string fileName = this.name + "_" + backupType + "_" + DateTime.Now.ToString("dd-MM-yy-HH-mm-ss") + "_" + this.alg;
+                addBackupForKey(fileName, User.getName());
+                Crypto cipher = new Crypto(alg, Encoding.Default.GetBytes(requestKey(fileName, User.getName()))); //ciframos utilizando el algoritmo elegido por el usuario y una clave aleatoria y única
+                
                 //suboArchivo
                 FileManager.UploadFile(backupFile, fileName, cipher);
                 FileManager.UploadFile(Encoding.ASCII.GetBytes(cpr.getMetadata()), fileName + ".meta", cipher, "storeBackupMetadata");
@@ -166,10 +169,57 @@ namespace ESproject {
             
         }
 
-         static public void restoreBackup(string backupName) {
+        public static string addBackupForKey(string name, string user)
+        {
+            Messages.ClientMessage message = new Messages.ClientMessage();
+            message.action = "backupAdd";
+            message.message.Add("name", name);
+            message.message.Add("user", user);
+            var rnd = new RNGCryptoServiceProvider();
+            var b = new byte[16];
+            rnd.GetNonZeroBytes(b);
+
+            Crypto crp = new Crypto("Aes", b);
+            message.message.Add("key", byteToString(crp.key));
+
+            string registerMessage = JsonConvert.SerializeObject(message);
+
+            Cliente.RunClient("localhost", "DESKTOP-IKVSN1R");
+            string respuestaServidor = Cliente.WriteMessage(registerMessage);
+            Cliente.closeConnection();
+            return respuestaServidor;
+        }
+
+        public static string byteToString(byte[] bytes)
+        {
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                builder.Append(bytes[i].ToString("x2"));
+            }
+
+            return builder.ToString();
+        }
+        public static string requestKey(string name, string user)
+        {
+            Messages.ClientMessage message = new Messages.ClientMessage();
+            message.action = "requestKey";
+            message.message.Add("name", name);
+            message.message.Add("user", user);
+
+            string registerMessage = JsonConvert.SerializeObject(message);
+
+            Cliente.RunClient("localhost", "DESKTOP-IKVSN1R");
+            string respuestaServidor = Cliente.WriteMessage(registerMessage);
+            Cliente.closeConnection();
+            return respuestaServidor;
+        }
+
+        static public void restoreBackup(string backupName) {
             string alg = backupName.Split('_')[backupName.Split('_').Length-1];
             List<Tuple<string, string>> metaList = new List<Tuple<string, string>>();
-            Crypto cipher = new Crypto(alg, User.getCipherKey());
+            Crypto cipher = new Crypto(alg, Encoding.Default.GetBytes(requestKey(backupName, User.getName())));
+            Console.WriteLine("paso 2 - " + requestKey(backupName, User.getName()));
             byte[] file = FileManager.DownloadFile(backupName, cipher);
             string meta = Encoding.UTF8.GetString(FileManager.DownloadFile("meta/" + backupName + ".meta", cipher));
             

@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="2sv\SecondStep.cs" />
     <Compile Include="2sv\TelegramBot.cs" />
+    <Compile Include="User\key.cs" />
     <Compile Include="KeyManager\KeyManager.cs" />
     <Compile Include="Messages\ServerMessage.cs" />
     <Compile Include="Program.cs" />

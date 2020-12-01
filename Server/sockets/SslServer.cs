@@ -12,6 +12,10 @@ using System.Collections.Generic;
 using ESproject._2sv;
 using System.Diagnostics;
 using Server._2FA;
+using Server.User;
+using System.Security.Cryptography;
+using Server.KeyManager;
+using Newtonsoft.Json.Serialization;
 
 namespace Server {
     public class SslServer {
@@ -77,6 +81,12 @@ namespace Server {
                     case "check2FAStatus":
                         check2FAStatus(clientMessage.message["mail"]);
                         break;
+                    case "backupAdd":
+                        backupAdd(clientMessage.message["name"], clientMessage.message["user"], clientMessage.message["key"]);
+                        break;
+                    case "requestKey":
+                        requestKey(clientMessage.message["name"], clientMessage.message["user"]);
+                        break;
                     case "getTelegramUsername":
                         getTelegramUsername(clientMessage.message["mail"]);
                         break;
@@ -122,6 +132,55 @@ namespace Server {
             string path = "backups/" + user + "/";
             System.IO.Directory.CreateDirectory(path);
             WriteMessage(JsonConvert.SerializeObject(Directory.GetFiles(path)));
+        }
+        static void backupAdd(string name, string user, string key)
+        {
+            string pathKeys = "Database/" + user + "/keys.json";
+            List<key> keys = new List<key>();
+            string jsonFile = System.IO.File.ReadAllText(pathKeys);
+            keys = JsonConvert.DeserializeObject<List<key>>(jsonFile);
+            
+
+            key clave = new key(name, key);
+            
+
+            keys.Add(clave);
+
+            string keyJson = JsonConvert.SerializeObject(keys);
+
+            System.IO.File.WriteAllText(pathKeys, keyJson);
+
+            WriteMessage("key añadida");
+        }
+
+        static void requestKey(string name, string user)
+        {
+            string pathKeys = "Database/" + user + "/keys.json";
+            List<key> keys = new List<key>();
+            string jsonFile = System.IO.File.ReadAllText(pathKeys);
+            keys = JsonConvert.DeserializeObject<List<key>>(jsonFile);
+            string value = "";
+            foreach (key k in keys)
+            {
+                if(name == k.backup)
+                {
+                    value = k.value;
+                    Console.WriteLine("LOOOOL " + k.value);
+                }
+            }
+
+            WriteMessage(value);
+        }
+
+        public static string byteToString(byte[] bytes)
+        {
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                builder.Append(bytes[i].ToString("x2"));
+            }
+
+            return builder.ToString();
         }
         static void SendWorkList(string user) {
             string path = "works/" + user + "/";
@@ -210,6 +269,7 @@ namespace Server {
             // comprobar si el mail está registrado            
             string pathUser = "Database\\users.json";
             string pathSalt = "Database\\salts.json";
+            string pathKeys = "Database\\" + mail;
             string serverMessage;
             bool registered = false;
             List<User.User> users = new List<User.User>();
@@ -217,6 +277,16 @@ namespace Server {
 
             string jsonFile = System.IO.File.ReadAllText(pathUser);
             string jsonSalt = System.IO.File.ReadAllText(pathSalt);
+
+            if (!Directory.Exists(pathKeys))
+            {
+                Directory.CreateDirectory(pathKeys);
+                using (FileStream fs = File.Create(pathKeys + "\\keys.json"))
+                {
+                    byte[] info = new UTF8Encoding(true).GetBytes("[]");
+                    fs.Write(info, 0, info.Length);
+                }
+            }
 
             if (jsonFile.Length > 0 && jsonSalt.Length > 0)
             {
@@ -500,7 +570,7 @@ namespace Server {
             byte[] messsageSocket = Encoding.UTF8.GetBytes(message + "<EOF>");
             // Send hello message to the server. 
             sslStream.Write(messsageSocket);
-            Console.WriteLine("Escribo: " + message);
+            //Console.WriteLine("Escribo: " + message);
             sslStream.Flush();
         }
         public static void WriteBytes(byte[] file) {

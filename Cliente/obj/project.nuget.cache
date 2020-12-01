@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zUGmVQnjVQ6g3sN5OgYjvaqO/Tq5Smrqj1n4KpY3Rg7ZCKHOAhYaAickEJJ8qlEZtKVJWG5Ot1cXEvuknpHt4A==",
+  "dgSpecHash": "JQ3ae14qGhtdL3TKVsyWPbIIBuqsx49w0Xb32aOdQJEXLQCf+1GKOt4MOfN8GscFolk1KWo58Gy2IL3SuX9CsQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\soto\\Desktop\\Entrega ES - Murcia, Soto, Vicedo\\practica-SI\\Cliente\\ClientePruebas.csproj",
+  "projectFilePath": "C:\\Users\\soto\\Desktop\\práctica PI\\practica-SI\\Cliente\\ClientePruebas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\soto\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],

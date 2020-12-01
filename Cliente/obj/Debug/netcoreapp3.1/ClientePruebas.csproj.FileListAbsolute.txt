@@ -47,3 +47,20 @@ C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\Cliente\obj\
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.dll
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.pdb
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.genruntimeconfig.cache
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.exe
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.deps.json
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.runtimeconfig.json
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.runtimeconfig.dev.json
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.dll
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\bin\Debug\netcoreapp3.1\ClientePruebas.pdb
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\bin\Debug\netcoreapp3.1\ESproject.exe
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\bin\Debug\netcoreapp3.1\ESproject.pdb
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.csproj.CoreCompileInputs.cache
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.AssemblyInfoInputs.cache
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.AssemblyInfo.cs
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.csproj.CopyComplete
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.dll
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.pdb
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.genruntimeconfig.cache
+C:\Users\soto\Desktop\práctica PI\practica-SI\Cliente\obj\Debug\netcoreapp3.1\ClientePruebas.csprojAssemblyReference.cache

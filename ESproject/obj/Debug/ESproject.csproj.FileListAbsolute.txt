@@ -56,3 +56,25 @@ C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\ESproject\ob
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\ESproject\obj\Debug\ESproject.UI.Activate2FA.resources
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\ESproject\obj\Debug\ESproject.UI.TelegramUsernameExplanation.resources
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\ESproject\obj\Debug\ESproject.UI.UserOptions.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\bin\Debug\ESproject.exe
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\bin\Debug\Newtonsoft.Json.dll
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\bin\Debug\Newtonsoft.Json.xml
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.Activate2FA.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.Captcha.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.JobList.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.login.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.Properties.Resources.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.MainUI.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.Register.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.schedule.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.ScheduleList.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.SecondStepUI.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.TelegramUsernameExplanation.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.UserOptions.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.Work.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.csproj.GenerateResource.cache
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.csproj.CoreCompileInputs.cache
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.csproj.CopyComplete
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.exe
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.pdb
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\bin\Debug\ESproject.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\soto\\Desktop\\Entrega ES - Murcia, Soto, Vicedo\\practica-SI\\Cliente\\ClientePruebas.csproj": {}
+    "C:\\Users\\soto\\Desktop\\práctica PI\\practica-SI\\Cliente\\ClientePruebas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\soto\\Desktop\\Entrega ES - Murcia, Soto, Vicedo\\practica-SI\\Cliente\\ClientePruebas.csproj": {
+    "C:\\Users\\soto\\Desktop\\práctica PI\\practica-SI\\Cliente\\ClientePruebas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\soto\\Desktop\\Entrega ES - Murcia, Soto, Vicedo\\practica-SI\\Cliente\\ClientePruebas.csproj",
+        "projectUniqueName": "C:\\Users\\soto\\Desktop\\práctica PI\\practica-SI\\Cliente\\ClientePruebas.csproj",
         "projectName": "ClientePruebas",
-        "projectPath": "C:\\Users\\soto\\Desktop\\Entrega ES - Murcia, Soto, Vicedo\\practica-SI\\Cliente\\ClientePruebas.csproj",
+        "projectPath": "C:\\Users\\soto\\Desktop\\práctica PI\\practica-SI\\Cliente\\ClientePruebas.csproj",
         "packagesPath": "C:\\Users\\soto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\soto\\Desktop\\Entrega ES - Murcia, Soto, Vicedo\\practica-SI\\Cliente\\obj\\",
+        "outputPath": "C:\\Users\\soto\\Desktop\\práctica PI\\practica-SI\\Cliente\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\soto\\Desktop\\Entrega ES - Murcia, Soto, Vicedo\\practica-SI\\ESproject\\ESproject.csproj": {
-                "projectPath": "C:\\Users\\soto\\Desktop\\Entrega ES - Murcia, Soto, Vicedo\\practica-SI\\ESproject\\ESproject.csproj"
+              "C:\\Users\\soto\\Desktop\\práctica PI\\practica-SI\\ESproject\\ESproject.csproj": {
+                "projectPath": "C:\\Users\\soto\\Desktop\\práctica PI\\practica-SI\\ESproject\\ESproject.csproj"
               }
             }
           }
@@ -69,12 +69,12 @@
         }
       }
     },
-    "C:\\Users\\soto\\Desktop\\Entrega ES - Murcia, Soto, Vicedo\\practica-SI\\ESproject\\ESproject.csproj": {
+    "C:\\Users\\soto\\Desktop\\práctica PI\\practica-SI\\ESproject\\ESproject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\soto\\Desktop\\Entrega ES - Murcia, Soto, Vicedo\\practica-SI\\ESproject\\ESproject.csproj",
+        "projectUniqueName": "C:\\Users\\soto\\Desktop\\práctica PI\\practica-SI\\ESproject\\ESproject.csproj",
         "projectName": "ESproject",
-        "projectPath": "C:\\Users\\soto\\Desktop\\Entrega ES - Murcia, Soto, Vicedo\\practica-SI\\ESproject\\ESproject.csproj"
+        "projectPath": "C:\\Users\\soto\\Desktop\\práctica PI\\practica-SI\\ESproject\\ESproject.csproj"
       },
       "frameworks": {
         "net40": {}

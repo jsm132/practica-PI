@@ -36,3 +36,16 @@ C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\Server\obj\D
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\Server\obj\Debug\Server.exe
 C:\Users\soto\Desktop\Entrega ES - Murcia, Soto, Vicedo\practica-SI\Server\obj\Debug\Server.pdb
+C:\Users\soto\Desktop\práctica PI\practica-SI\Server\bin\Debug\Server.exe.config
+C:\Users\soto\Desktop\práctica PI\practica-SI\Server\bin\Debug\Server.exe
+C:\Users\soto\Desktop\práctica PI\practica-SI\Server\bin\Debug\Newtonsoft.Json.dll
+C:\Users\soto\Desktop\práctica PI\practica-SI\Server\bin\Debug\Telegram.Bot.dll
+C:\Users\soto\Desktop\práctica PI\practica-SI\Server\bin\Debug\Newtonsoft.Json.xml
+C:\Users\soto\Desktop\práctica PI\practica-SI\Server\bin\Debug\Telegram.Bot.xml
+C:\Users\soto\Desktop\práctica PI\practica-SI\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\Server\obj\Debug\Server.csproj.GenerateResource.cache
+C:\Users\soto\Desktop\práctica PI\practica-SI\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\soto\Desktop\práctica PI\practica-SI\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\soto\Desktop\práctica PI\practica-SI\Server\obj\Debug\Server.exe
+C:\Users\soto\Desktop\práctica PI\practica-SI\Server\obj\Debug\Server.pdb
+C:\Users\soto\Desktop\práctica PI\practica-SI\Server\bin\Debug\Server.pdb

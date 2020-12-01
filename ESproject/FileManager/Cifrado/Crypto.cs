@@ -9,13 +9,13 @@ namespace ESproject.Cifrado
 {
     public class Crypto {
         SymmetricAlgorithm algorithm;
-        byte[] key;
-        byte[] IV;
+        public byte[] key;
+        public byte[] IV;
 
         public Crypto(string algorithmString, byte[] key) {
             algorithm = SymmetricAlgorithm.Create(algorithmString);
             this.key = key;
-            this.IV = SHA256.Create().ComputeHash(key).Take(key.Length).ToArray();
+            this.IV = SHA256.Create().ComputeHash(key).Take(key.Length / 2).ToArray();
         }
 
         public byte[] encryptFile(byte[] file) {

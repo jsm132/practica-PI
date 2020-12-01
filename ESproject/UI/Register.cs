@@ -68,31 +68,40 @@ namespace ESproject.UI
             }
             else // comprobar que las contraseñas coinciden
             {
-                if(String.Compare(password, checkpassword)== 0)
+                if(password.Length >= 8)
                 {
-                    // comprobamos que no está registrado el correo
-                    string serverMessage = Registro.Registro.Register(mail, password);
+                    if (String.Compare(password, checkpassword) == 0)
+                    {
+                        // comprobamos que no está registrado el correo
+                        string serverMessage = Registro.Registro.Register(mail, password);
 
-                    if(serverMessage.Equals("Usuario ya registrado"))
-                    {
-                        error_message_label.Text = "Ese correo ya está registrado, introduzca otro, por favor";
-                        error_message_label.Visible = true;
-                    }
-                    else if(serverMessage.Equals("Usuario registrado con éxito")) // el usuario se ha registrado 
-                    {
-                        user_registered_message_label.Visible = true;
+                        if (serverMessage.Equals("Usuario ya registrado"))
+                        {
+                            error_message_label.Text = "Ese correo ya está registrado, introduzca otro, por favor";
+                            error_message_label.Visible = true;
+                        }
+                        else if (serverMessage.Equals("Usuario registrado con éxito")) // el usuario se ha registrado 
+                        {
+                            user_registered_message_label.Visible = true;
+                        }
+                        else
+                        {
+                            error_message_label.Text = "Se ha producido un error durante el registro";
+                            error_message_label.Visible = true;
+                        }
                     }
                     else
                     {
-                        error_message_label.Text = "Se ha producido un error durante el registro";
+                        error_message_label.Text = "Las contraseñas introducidas no coinciden";
                         error_message_label.Visible = true;
                     }
                 }
                 else
                 {
-                    error_message_label.Text = "Las contraseñas introducidas no coinciden";
+                    error_message_label.Text = "La contraseña debe contener por lo menos 8 carácteres";
                     error_message_label.Visible = true;
                 }
+                    
             }
         }
     }

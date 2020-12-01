@@ -23,15 +23,15 @@ namespace ESproject.UI
 
         private string generateCaptcha()
         {
-            var number = 0;
+            var num = 0;
             Random r1 = new Random();
-            number = r1.Next(1000, 9999);
+            num = r1.Next(1000, 9999);
             var image = new Bitmap(this.pictureBox1.Width, this.pictureBox1.Height);
             var font = new Font("Mistral", 25, FontStyle.Italic, GraphicsUnit.Pixel);
             var graphics = Graphics.FromImage(image);
-            graphics.DrawString(number.ToString(), font, Brushes.Red, new Point(0, 0));
+            graphics.DrawString(num.ToString(), font, Brushes.Red, new Point(0, 0));
             pictureBox1.Image = image;
-            return number.ToString();
+            return num.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

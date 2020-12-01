@@ -34,7 +34,7 @@ namespace Server._2FA
                         bot.SendTextMessageAsync(e.Message.Chat.Id, "Bienvenido/a " + actualUsername + " su código de autenticación es: " + this.code);
                     }else
                     {
-                        bot.SendTextMessageAsync(e.Message.Chat.Id, "Usted no se encuentra actualmente en el proceso de autenticación, por lo que no se le enviará ningún código.");
+                        bot.SendTextMessageAsync(e.Message.Chat.Id, "Este usuario de telegram no cuenta con la verificación en dos pasos o no se encuentra actualmente en el proceso de autenticación, no se le enviará ninún código de autenticación.");
                     }
                 }
                 else
