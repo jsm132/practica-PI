@@ -118,6 +118,24 @@
     <Compile Include="UI\SecondStepUI.Designer.cs">
       <DependentUpon>SecondStepUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Share.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Share.Designer.cs">
+      <DependentUpon>Share.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SharedWithMe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SharedWithMe.Designer.cs">
+      <DependentUpon>SharedWithMe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ShareList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ShareList.Designer.cs">
+      <DependentUpon>ShareList.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\TelegramUsernameExplanation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +192,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SecondStepUI.resx">
       <DependentUpon>SecondStepUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Share.resx">
+      <DependentUpon>Share.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SharedWithMe.resx">
+      <DependentUpon>SharedWithMe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ShareList.resx">
+      <DependentUpon>ShareList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TelegramUsernameExplanation.resx">
       <DependentUpon>TelegramUsernameExplanation.cs</DependentUpon>

@@ -12,7 +12,7 @@ namespace ESproject {
     public class User {
         static string Name; //tomar valor al hacer login
         static List<Work> works; //cargar todos los trabajos asociados => descargando json del servidor y convirtiéndolo a lista
-        static byte[] CipherKey; //toma valor al hacer login
+        //static byte[] CipherKey; //toma valor al hacer login
         static Thread checkerThread;
   
         static User() {
@@ -79,16 +79,16 @@ namespace ESproject {
         public static string getName() {
             return Name;
         }
-        public static void setCipherKey(byte[] key) {
+        /*public static void setCipherKey(byte[] key) {
             CipherKey = key;
-        }
+        }*/
         public static void setName(string name) {
             Name = name;
         }
 
-        public static byte[] getCipherKey() {
+        /*public static byte[] getCipherKey() {
             return CipherKey;
-        }
+        }*/
 
         public static List<Work> getWorks() {
             return works;

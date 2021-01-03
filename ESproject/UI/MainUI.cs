@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace ESproject.UI
 {
@@ -42,6 +43,8 @@ namespace ESproject.UI
             Console.WriteLine("Total de trabajos " + User.getWorks().Count + " Total de planes " + User.getScheduleList().Count);
             User.startChecker();
         }
+
+        
 
         private void MainUI_FormClosing(Object sender, FormClosingEventArgs e)
         {
@@ -113,6 +116,7 @@ namespace ESproject.UI
 
         private void backup_list_SelectedIndexChanged(object sender, EventArgs e)
         {
+            button1.Enabled = true;
             if (backup_list.SelectedItem != null)
             {
                 backupName_textbox.Text = backup_list.SelectedItem.ToString().Split('_')[0];
@@ -125,6 +129,31 @@ namespace ESproject.UI
         private void opcionesDeCuentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form useropt = new UserOptions();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form share = new Share(backup_list.SelectedItem.ToString());
+        }
+
+        private void copiasCompartidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form sharelist = new ShareList();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form sharedWithMe = new SharedWithMe();
         }
     }
 }

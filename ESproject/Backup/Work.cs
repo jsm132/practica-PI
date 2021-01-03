@@ -152,15 +152,16 @@ namespace ESproject {
             }
 
             if (backupType == "Completo")
-                backupFile = cpr.compressFiles(getFileNames()); //dejar esta línea si se quiere probar
+                backupFile = cpr.compressFiles(getFileNames()); 
                 
 
             if(backupFile != null)
             {
-                //AÑADIR AL NOMBRE DE ARCHIVO, EL TIPO DE COPIA (INC, FULL)
+                //AÑADIR AL NOMBRE DE ARCHIVO, EL TIPO DE COPIA (INC, FULL), el día y hora en la que se realizó y el algoritmo de cifrado utilizado
                 string fileName = this.name + "_" + backupType + "_" + DateTime.Now.ToString("dd-MM-yy-HH-mm-ss") + "_" + this.alg;
                 addBackupForKey(fileName, User.getName());
-                Crypto cipher = new Crypto(alg, Encoding.Default.GetBytes(requestKey(fileName, User.getName()))); //ciframos utilizando el algoritmo elegido por el usuario y una clave aleatoria y única
+                //ciframos utilizando el algoritmo elegido por el usuario y una clave aleatoria y única
+                Crypto cipher = new Crypto(alg, Encoding.Default.GetBytes(requestKey(fileName, User.getName()))); 
                 
                 //suboArchivo
                 FileManager.UploadFile(backupFile, fileName, cipher);
@@ -175,6 +176,8 @@ namespace ESproject {
             message.action = "backupAdd";
             message.message.Add("name", name);
             message.message.Add("user", user);
+
+            //generamos la clave que utilizaremos para descifrar el backup
             var rnd = new RNGCryptoServiceProvider();
             var b = new byte[16];
             rnd.GetNonZeroBytes(b);
@@ -219,7 +222,7 @@ namespace ESproject {
             string alg = backupName.Split('_')[backupName.Split('_').Length-1];
             List<Tuple<string, string>> metaList = new List<Tuple<string, string>>();
             Crypto cipher = new Crypto(alg, Encoding.Default.GetBytes(requestKey(backupName, User.getName())));
-            Console.WriteLine("paso 2 - " + requestKey(backupName, User.getName()));
+
             byte[] file = FileManager.DownloadFile(backupName, cipher);
             string meta = Encoding.UTF8.GetString(FileManager.DownloadFile("meta/" + backupName + ".meta", cipher));
             

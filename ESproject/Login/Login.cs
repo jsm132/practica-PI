@@ -26,7 +26,7 @@ namespace ESproject.Login
             string loginMessage = JsonConvert.SerializeObject(message);
 
             User.setName(mail);
-            User.setCipherKey(KeyManager.KeyManager.getCipherKey(passwordHash));
+            //User.setCipherKey(KeyManager.KeyManager.getCipherKey(passwordHash));
             Cliente.RunClient("localhost", "DESKTOP-IKVSN1R");
 ;           string respuestaServidor = Cliente.WriteMessage(loginMessage);
             

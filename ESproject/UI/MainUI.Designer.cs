@@ -43,12 +43,16 @@
             this.verToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.añadirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verTrabajosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copiasCompartidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.compartidoConmigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.opcionesDeCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshBackupList = new System.Windows.Forms.Button();
             this.backup_list = new System.Windows.Forms.ListBox();
             this.algorithm_textbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.infoLabel = new System.Windows.Forms.Label();
-            this.opcionesDeCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,12 +147,15 @@
             this.menuStrip1.Size = new System.Drawing.Size(523, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // opcionesToolStripMenuItem
             // 
             this.opcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.planificaciónToolStripMenuItem1,
             this.verTrabajosToolStripMenuItem,
+            this.copiasCompartidasToolStripMenuItem,
+            this.compartidoConmigoToolStripMenuItem,
             this.opcionesDeCuentaToolStripMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
             this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
@@ -160,7 +167,7 @@
             this.verToolStripMenuItem1,
             this.añadirToolStripMenuItem1});
             this.planificaciónToolStripMenuItem1.Name = "planificaciónToolStripMenuItem1";
-            this.planificaciónToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.planificaciónToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.planificaciónToolStripMenuItem1.Text = "Planificación";
             this.planificaciónToolStripMenuItem1.Click += new System.EventHandler(this.planificaciónToolStripMenuItem1_Click);
             // 
@@ -181,13 +188,33 @@
             // verTrabajosToolStripMenuItem
             // 
             this.verTrabajosToolStripMenuItem.Name = "verTrabajosToolStripMenuItem";
-            this.verTrabajosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verTrabajosToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.verTrabajosToolStripMenuItem.Text = "Ver trabajos";
             this.verTrabajosToolStripMenuItem.Click += new System.EventHandler(this.verTrabajosToolStripMenuItem_Click);
             // 
+            // copiasCompartidasToolStripMenuItem
+            // 
+            this.copiasCompartidasToolStripMenuItem.Name = "copiasCompartidasToolStripMenuItem";
+            this.copiasCompartidasToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.copiasCompartidasToolStripMenuItem.Text = "Copias compartidas";
+            this.copiasCompartidasToolStripMenuItem.Click += new System.EventHandler(this.copiasCompartidasToolStripMenuItem_Click);
+            // 
+            // compartidoConmigoToolStripMenuItem
+            // 
+            this.compartidoConmigoToolStripMenuItem.Name = "compartidoConmigoToolStripMenuItem";
+            this.compartidoConmigoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.compartidoConmigoToolStripMenuItem.Text = "Compartido conmigo";
+            // 
+            // opcionesDeCuentaToolStripMenuItem
+            // 
+            this.opcionesDeCuentaToolStripMenuItem.Name = "opcionesDeCuentaToolStripMenuItem";
+            this.opcionesDeCuentaToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.opcionesDeCuentaToolStripMenuItem.Text = "Opciones de cuenta";
+            this.opcionesDeCuentaToolStripMenuItem.Click += new System.EventHandler(this.opcionesDeCuentaToolStripMenuItem_Click);
+            // 
             // refreshBackupList
             // 
-            this.refreshBackupList.Location = new System.Drawing.Point(16, 416);
+            this.refreshBackupList.Location = new System.Drawing.Point(12, 406);
             this.refreshBackupList.Name = "refreshBackupList";
             this.refreshBackupList.Size = new System.Drawing.Size(75, 23);
             this.refreshBackupList.TabIndex = 11;
@@ -224,25 +251,41 @@
             // infoLabel
             // 
             this.infoLabel.AutoSize = true;
-            this.infoLabel.Location = new System.Drawing.Point(296, 318);
+            this.infoLabel.Location = new System.Drawing.Point(297, 339);
             this.infoLabel.Name = "infoLabel";
             this.infoLabel.Size = new System.Drawing.Size(35, 13);
             this.infoLabel.TabIndex = 15;
             this.infoLabel.Text = "label2";
             this.infoLabel.Visible = false;
             // 
-            // opcionesDeCuentaToolStripMenuItem
+            // button1
             // 
-            this.opcionesDeCuentaToolStripMenuItem.Name = "opcionesDeCuentaToolStripMenuItem";
-            this.opcionesDeCuentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.opcionesDeCuentaToolStripMenuItem.Text = "Opciones de cuenta";
-            this.opcionesDeCuentaToolStripMenuItem.Click += new System.EventHandler(this.opcionesDeCuentaToolStripMenuItem_Click);
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(324, 269);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Compartir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(312, 298);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(135, 23);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Compartido conmigo";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.algorithm_textbox);
             this.Controls.Add(this.label1);
@@ -292,5 +335,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.ToolStripMenuItem opcionesDeCuentaToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem copiasCompartidasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem compartidoConmigoToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
     }
 }

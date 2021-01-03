@@ -69,8 +69,14 @@ namespace Server {
                 Server.Messages.ServerMessage clientMessage = JsonConvert.DeserializeObject<Server.Messages.ServerMessage>(message);
 
                 switch (clientMessage.action) {
+                    case "retrieveSharedBackups":
+                        retrieveSharedBackups(clientMessage.message["user"]);
+                        break;
                     case "register":
                         Register(clientMessage.message["mail"], clientMessage.message["password"]);
+                        break;
+                    case "shareBackup":
+                        shareBackup(clientMessage.message["currentUser"], clientMessage.message["backupName"], clientMessage.message["userShare"]);
                         break;
                     case "login":
                         Login(clientMessage.message["mail"], clientMessage.message["password"], clientMessage.message["secondFA"], clientMessage.message["telegramUser"]);
@@ -86,6 +92,9 @@ namespace Server {
                         break;
                     case "requestKey":
                         requestKey(clientMessage.message["name"], clientMessage.message["user"]);
+                        break;
+                    case "requestSharing":
+                        requestSharing(clientMessage.message["name"], clientMessage.message["user"]);
                         break;
                     case "getTelegramUsername":
                         getTelegramUsername(clientMessage.message["mail"]);
@@ -133,6 +142,87 @@ namespace Server {
             System.IO.Directory.CreateDirectory(path);
             WriteMessage(JsonConvert.SerializeObject(Directory.GetFiles(path)));
         }
+
+        static void retrieveSharedBackups(string user) //comprueba en cada carpeta de usuario, si contiene algú backup que comparta con el usuario que llama a este método
+        {
+            List<string> shares = new List<string>();
+
+            string pathUsers = "Database\\users.json";
+            string jsonFile = System.IO.File.ReadAllText(pathUsers);
+            List<User.User> users = new List<User.User>();
+            users = JsonConvert.DeserializeObject<List<User.User>>(jsonFile);
+
+            foreach (User.User checkUser in users)
+            {
+                string pathKeys = "Database/" + checkUser.mail + "/keys.json";
+                string jsonFileKeys = System.IO.File.ReadAllText(pathKeys);
+                List<key> keys = new List<key>();
+                keys = JsonConvert.DeserializeObject<List<key>>(jsonFileKeys);
+
+                foreach (key k in keys)
+                {
+                    if(k != null){
+                        List<string> sharings = k.sharedWith;
+                        if (sharings.Count > 0)
+                        {
+                            foreach (string s in sharings)
+                            {
+
+                                if (s.Equals(user))
+                                {
+                                    shares.Add(k.backup);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            WriteMessage(String.Join(", ", shares.ToArray()));
+        }
+
+        static void shareBackup(string currentUser, string backupName, string userShare)
+        {
+            bool registered = false;
+            string pathKeys = "Database/" + currentUser + "/keys.json";
+            string pathUsers = "Database\\users.json";
+
+            string jsonFile = System.IO.File.ReadAllText(pathUsers);
+            string jsonFileKeys = System.IO.File.ReadAllText(pathKeys);
+
+            List<User.User> users = new List<User.User>();
+            List<key> keys = new List<key>();
+            users = JsonConvert.DeserializeObject<List<User.User>>(jsonFile);
+            keys = JsonConvert.DeserializeObject<List<key>>(jsonFileKeys);
+
+            foreach (User.User user in users)
+            {
+                if (user.mail.Equals(userShare))
+                    registered = true;
+            }
+
+            if(registered == true)
+            {
+                foreach(key k in keys)
+                {
+                    if(k.backup == backupName)
+                    {
+                       k.sharedWith.Add(userShare);
+                    }
+                }
+
+                string keyJson = JsonConvert.SerializeObject(keys);
+                File.WriteAllText(pathKeys, keyJson);
+
+                WriteMessage("Backup compartido.");
+            }
+            else
+            {
+                WriteMessage("El usuario especificado para compartir no existe.");
+            }
+
+            
+        }
+
         static void backupAdd(string name, string user, string key)
         {
             string pathKeys = "Database/" + user + "/keys.json";
@@ -141,7 +231,7 @@ namespace Server {
             keys = JsonConvert.DeserializeObject<List<key>>(jsonFile);
             
 
-            key clave = new key(name, key);
+            key clave = new key(name, key, new List<string>());
             
 
             keys.Add(clave);
@@ -165,11 +255,28 @@ namespace Server {
                 if(name == k.backup)
                 {
                     value = k.value;
-                    Console.WriteLine("LOOOOL " + k.value);
                 }
             }
 
             WriteMessage(value);
+        }
+
+        static void requestSharing(string name, string user)
+        {
+            string pathKeys = "Database/" + user + "/keys.json";
+            List<key> keys = new List<key>();
+            string jsonFile = System.IO.File.ReadAllText(pathKeys);
+            keys = JsonConvert.DeserializeObject<List<key>>(jsonFile);
+            List<string> sharing = new List<string>();
+            foreach (key k in keys)
+            {
+                if (name == k.backup)
+                {
+                    sharing = k.sharedWith;
+                }
+            }
+
+            WriteMessage(String.Join(", ", sharing.ToArray()));
         }
 
         public static string byteToString(byte[] bytes)

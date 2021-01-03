@@ -78,3 +78,6 @@ C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.csp
 C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.exe
 C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.pdb
 C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\bin\Debug\ESproject.pdb
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.Share.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.ShareList.resources
+C:\Users\soto\Desktop\práctica PI\practica-SI\ESproject\obj\Debug\ESproject.UI.SharedWithMe.resources

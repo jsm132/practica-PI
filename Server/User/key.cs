@@ -10,11 +10,13 @@ namespace Server.User
     {
         public string backup;
         public string value;
+        public List<string> sharedWith;
 
-        public key(string backup, string value)
+        public key(string backup, string value, List<string> list)
         {
             this.backup = backup;
             this.value = value;
+            this.sharedWith = list;
         }
     }
 }

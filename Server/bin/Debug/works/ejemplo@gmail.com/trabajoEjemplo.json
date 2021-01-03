@@ -1,0 +1,8 @@
+{
+    "files": [{ "archivo": { "name": "C:\\Users\\soto\\Desktop\\pruebas\\foto.jpg", "hash": "47945bbdcd1457ea11167a1a934670eb5e7e9c3563545951ad120953381aa87f" } },
+        { "archivo": { "name": "C:\\Users\\soto\\Desktop\\pruebas\\prueba texto.txt", "hash": "a7d3a134868ff9d50b333d805b1f257fa3388a8c937a4e9d7a4d45ca148685f5" } }
+    ],
+    "sch": "planEjemplo",
+    "alg": "AES",
+    "name": "trabajoEjemplo"
+}

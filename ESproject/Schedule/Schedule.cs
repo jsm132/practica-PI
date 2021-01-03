@@ -54,9 +54,7 @@ namespace ESproject.Schedule
             string scheduleMessage = JsonConvert.SerializeObject(message);
 
             Cliente.RunClient("localhost", "DESKTOP-IKVSN1R");
-            Console.WriteLine("lo que sea");
             string respuestaServidor = Cliente.WriteMessage(scheduleMessage);
-            Console.WriteLine("lo que sea");
             Cliente.closeConnection();
         }
 
