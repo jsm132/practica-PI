@@ -234,5 +234,25 @@ namespace ESproject {
             }
             Compress.restoreFiles(file, metaList);
         }
+
+        static public void restoreBackupShared(string backupName, string user)
+        {
+            string alg = backupName.Split('_')[backupName.Split('_').Length - 1];
+            List<Tuple<string, string>> metaList = new List<Tuple<string, string>>();
+            Crypto cipher = new Crypto(alg, Encoding.Default.GetBytes(requestKey(backupName, user)));
+
+            byte[] file = FileManager.DownloadFileShared(user, backupName, cipher);
+            string meta = Encoding.UTF8.GetString(FileManager.DownloadFileShared(user, "meta/" + backupName + ".meta", cipher));
+
+            string[] parts = meta.Split('\n');
+            parts = parts.Take(parts.Count() - 1).ToArray();
+            foreach (string s in parts)
+            {
+                string[] sub = s.Split('|');
+                metaList.Add(new Tuple<string, string>(sub[0], sub[1]));
+            }
+            Console.WriteLine("HOLA TIIIIIO");
+            Compress.restoreFilesShared(file, metaList, user);
+        }
     }
 }

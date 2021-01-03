@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Windows.Forms;
 
@@ -47,6 +48,22 @@ namespace ESproject.UI
             {
                 listBox1.Items.Add(s);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label2.Visible = false;
+            if (listBox1.SelectedItem != null)
+            {
+                string[] path = listBox1.SelectedItem.ToString().Split('/');
+                ESproject.Work.restoreBackupShared(path[1], path[0]);
+            }
+            label2.Visible = true;
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

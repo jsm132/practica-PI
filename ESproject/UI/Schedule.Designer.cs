@@ -169,6 +169,7 @@
             // 
             this.hour_comboBox.FormattingEnabled = true;
             this.hour_comboBox.Items.AddRange(new object[] {
+            "00",
             "01",
             "02",
             "03",
@@ -191,8 +192,7 @@
             "20",
             "21",
             "22",
-            "23",
-            "24"});
+            "23"});
             this.hour_comboBox.Location = new System.Drawing.Point(168, 118);
             this.hour_comboBox.Name = "hour_comboBox";
             this.hour_comboBox.Size = new System.Drawing.Size(45, 21);

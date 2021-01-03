@@ -67,5 +67,26 @@ namespace ESproject {
             }
             return fileBytes;
         }
+
+        public static byte[] DownloadFileShared(string user, string fileName, Crypto cipher, bool crypto = true, string action = "download")
+        {
+            //preparo json
+            Messages.ClientMessage message = new Messages.ClientMessage { action = action };
+            message.message.Add("fileName", fileName);
+            message.message.Add("user", user);
+            string downloadMsg = JsonConvert.SerializeObject(message);
+            //abro comunicación
+            Cliente.RunClient("localhost", "DESKTOP-IKVSN1R");
+            string numBytes = Cliente.WriteMessage(downloadMsg);
+            byte[] fileBytes = Cliente.ReadBytes(int.Parse(numBytes));
+            Cliente.closeConnection();
+            //File.WriteAllBytes(fileName, fileBytes);
+            Console.WriteLine(fileBytes.Length + " bytes downloaded");
+            if (crypto)
+            {
+                fileBytes = cipher.decryptFile(fileBytes);
+            }
+            return fileBytes;
+        }
     }
 }

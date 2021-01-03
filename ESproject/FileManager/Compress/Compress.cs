@@ -51,6 +51,23 @@ namespace ESproject {
                 offset += fileSize;
             }
         }
+
+        public static void restoreFilesShared(byte[] backup, List<Tuple<string, string>> meta, string user)
+        {
+            int offset = 0;
+            foreach (Tuple<string, string> t in meta)
+            {
+                string filePath = t.Item1;
+                Console.WriteLine(filePath);
+                //Console.WriteLine(t.Item2);
+                int fileSize = int.Parse(t.Item2);
+                byte[] file = new byte[fileSize];
+                Buffer.BlockCopy(backup, offset, file, 0, fileSize);
+                //ASEGURARNOS DE QUE SOBREESRIBE ARCHIVOS -> IMPORTANTE PARA CUANDO ESTEMOS RESTAURANDO UNA COPIA INCREMENTAL
+                File.WriteAllBytes(Path.GetDirectoryName(filePath) + "/" + Path.GetFileNameWithoutExtension(filePath) + ".bkp" + Path.GetExtension(filePath), file);
+                offset += fileSize;
+            }
+        }
     }
 
 }

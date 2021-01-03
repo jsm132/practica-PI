@@ -170,14 +170,14 @@ namespace Server {
 
                                 if (s.Equals(user))
                                 {
-                                    shares.Add(k.backup);
+                                    shares.Add(checkUser.mail + "/" + k.backup);
                                 }
                             }
                         }
                     }
                 }
             }
-            WriteMessage(String.Join(", ", shares.ToArray()));
+            WriteMessage(String.Join(",", shares.ToArray()));
         }
 
         static void shareBackup(string currentUser, string backupName, string userShare)
