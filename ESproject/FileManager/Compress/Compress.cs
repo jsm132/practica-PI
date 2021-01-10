@@ -38,7 +38,7 @@ namespace ESproject {
         }
 
         //a partir de un array de bytes, y una lista con los nombres y tamaño (ordenados) restaura un backup
-        public static void restoreFiles(byte[] backup, List<Tuple<string, string>> meta) {
+        public static void restoreFiles(byte[] backup, List<Tuple<string, string>> meta, string paths) {
             int offset = 0;
             foreach(Tuple<string, string> t in meta) {
                 string filePath = t.Item1;
@@ -47,12 +47,12 @@ namespace ESproject {
                 byte[] file = new byte[fileSize];
                 Buffer.BlockCopy(backup, offset, file, 0, fileSize);
                 //ASEGURARNOS DE QUE SOBREESRIBE ARCHIVOS -> IMPORTANTE PARA CUANDO ESTEMOS RESTAURANDO UNA COPIA INCREMENTAL
-                File.WriteAllBytes(Path.GetDirectoryName(filePath) + "/" + Path.GetFileNameWithoutExtension(filePath) + ".bkp" + Path.GetExtension(filePath), file);
+                File.WriteAllBytes(paths + "/" + Path.GetFileNameWithoutExtension(filePath) + ".bkp" + Path.GetExtension(filePath), file);
                 offset += fileSize;
             }
         }
 
-        public static void restoreFilesShared(byte[] backup, List<Tuple<string, string>> meta, string user)
+        public static void restoreFilesShared(byte[] backup, List<Tuple<string, string>> meta, string user, string path)
         {
             int offset = 0;
             foreach (Tuple<string, string> t in meta)
@@ -64,7 +64,7 @@ namespace ESproject {
                 byte[] file = new byte[fileSize];
                 Buffer.BlockCopy(backup, offset, file, 0, fileSize);
                 //ASEGURARNOS DE QUE SOBREESRIBE ARCHIVOS -> IMPORTANTE PARA CUANDO ESTEMOS RESTAURANDO UNA COPIA INCREMENTAL
-                File.WriteAllBytes(Path.GetDirectoryName(filePath) + "/" + Path.GetFileNameWithoutExtension(filePath) + ".bkp" + Path.GetExtension(filePath), file);
+                File.WriteAllBytes(path + "/" + Path.GetFileNameWithoutExtension(filePath) + ".bkp" + Path.GetExtension(filePath), file);
                 offset += fileSize;
             }
         }

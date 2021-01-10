@@ -16,10 +16,29 @@ namespace ESproject.UI
         {
             this.Show();
             InitializeComponent();
-            foreach (string backup in User.getBackupList())
+
+            string backups = getFilesShared();
+
+            string[] shar = backups.Split(',');
+
+            foreach (string s in shar)
             {
-                listBox1.Items.Add(backup);
+                listBox1.Items.Add(s);
             }
+        }
+
+        private string getFilesShared()
+        {
+            Messages.ClientMessage message = new Messages.ClientMessage();
+            message.action = "downloadBackupListShared";
+            message.message.Add("user", User.getName());
+
+            string registerMessage = JsonConvert.SerializeObject(message);
+
+            Cliente.RunClient("localhost", "DESKTOP-IKVSN1R");
+            string respuestaServidor = Cliente.WriteMessage(registerMessage);
+            Cliente.closeConnection();
+            return respuestaServidor;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

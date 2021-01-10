@@ -218,7 +218,7 @@ namespace ESproject {
             return respuestaServidor;
         }
 
-        static public void restoreBackup(string backupName) {
+        static public void restoreBackup(string backupName, string paths) {
             string alg = backupName.Split('_')[backupName.Split('_').Length-1];
             List<Tuple<string, string>> metaList = new List<Tuple<string, string>>();
             Crypto cipher = new Crypto(alg, Encoding.Default.GetBytes(requestKey(backupName, User.getName())));
@@ -232,10 +232,10 @@ namespace ESproject {
                 string[] sub = s.Split('|');
                 metaList.Add(new Tuple<string, string>(sub[0], sub[1]));
             }
-            Compress.restoreFiles(file, metaList);
+            Compress.restoreFiles(file, metaList, paths);
         }
 
-        static public void restoreBackupShared(string backupName, string user)
+        static public void restoreBackupShared(string backupName, string user, string path)
         {
             string alg = backupName.Split('_')[backupName.Split('_').Length - 1];
             List<Tuple<string, string>> metaList = new List<Tuple<string, string>>();
@@ -251,8 +251,8 @@ namespace ESproject {
                 string[] sub = s.Split('|');
                 metaList.Add(new Tuple<string, string>(sub[0], sub[1]));
             }
-            Console.WriteLine("HOLA TIIIIIO");
-            Compress.restoreFilesShared(file, metaList, user);
+
+            Compress.restoreFilesShared(file, metaList, user, path);
         }
     }
 }

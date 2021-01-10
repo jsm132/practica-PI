@@ -123,6 +123,9 @@ namespace Server {
                     case "downloadBackupList":
                         SendBackupList(clientMessage.message["user"]);
                         break;
+                    case "downloadBackupListShared":
+                        SendBackupListShared(clientMessage.message["user"]);
+                        break;
                     case "downloadWorkList":
                         SendWorkList(clientMessage.message["user"]);
                         break;
@@ -141,6 +144,25 @@ namespace Server {
             string path = "backups/" + user + "/";
             System.IO.Directory.CreateDirectory(path);
             WriteMessage(JsonConvert.SerializeObject(Directory.GetFiles(path)));
+        }
+
+        static void SendBackupListShared(string user)
+        {
+
+            string pathKeys = "Database/" + user + "/keys.json";
+            List<key> keys = new List<key>();
+            string jsonFile = System.IO.File.ReadAllText(pathKeys);
+            keys = JsonConvert.DeserializeObject<List<key>>(jsonFile);
+            List<string> sharing = new List<string>();
+            foreach (key k in keys)
+            {
+                if(k.sharedWith.Count > 0)
+                {
+                    sharing.Add(k.backup);
+                }
+            }
+
+            WriteMessage(String.Join(", ", sharing.ToArray()));
         }
 
         static void retrieveSharedBackups(string user) //comprueba en cada carpeta de usuario, si contiene algú backup que comparta con el usuario que llama a este método

@@ -1,0 +1,7 @@
+[{
+        "backup": "uno_Completo_10-01-21-17-49-14_AES",
+        "value": "9ed7b79a232f68f89ce4e9babc0bfb52",
+        "sharedWith": ["ejemplo@gmail.com"]
+    },
+    { "backup": "dos_Completo_10-01-21-17-50-13_AES", "value": "0b68a3fdd4c4ee47be5a6fe7965b20c5", "sharedWith": [] }
+]

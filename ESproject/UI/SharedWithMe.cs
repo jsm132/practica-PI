@@ -56,7 +56,25 @@ namespace ESproject.UI
             if (listBox1.SelectedItem != null)
             {
                 string[] path = listBox1.SelectedItem.ToString().Split('/');
-                ESproject.Work.restoreBackupShared(path[1], path[0]);
+
+                string files = "";
+
+                if (listBox1.SelectedItem != null)
+                {
+
+                    using (var fbd = new FolderBrowserDialog())
+                    {
+                        DialogResult result = fbd.ShowDialog();
+
+                        if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                        {
+                            files = fbd.SelectedPath;
+
+                        }
+                    }
+                }
+
+                ESproject.Work.restoreBackupShared(path[1], path[0], files);
             }
             label2.Visible = true;
         }

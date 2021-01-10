@@ -1,1 +1,1 @@
-[{"scheduleName":"prueba","days":[{"week":"Primer","weekDay":"Domingo","backupType":"Completo","hour":"21","minute":"18"}],"backupType":null}]
+[{"scheduleName":"prueba","days":[{"week":"Primer","weekDay":"Domingo","backupType":"Completo","hour":"21","minute":"18"}],"backupType":null},{"scheduleName":"uno","days":[{"week":"Segundo","weekDay":"Domingo","backupType":"Completo","hour":"17","minute":"23"}],"backupType":null}]

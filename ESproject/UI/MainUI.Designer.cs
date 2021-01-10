@@ -44,7 +44,6 @@
             this.añadirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verTrabajosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiasCompartidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.compartidoConmigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcionesDeCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshBackupList = new System.Windows.Forms.Button();
             this.backup_list = new System.Windows.Forms.ListBox();
@@ -128,6 +127,7 @@
             // 
             // restoreBackup_button
             // 
+            this.restoreBackup_button.Enabled = false;
             this.restoreBackup_button.Location = new System.Drawing.Point(324, 239);
             this.restoreBackup_button.Name = "restoreBackup_button";
             this.restoreBackup_button.Size = new System.Drawing.Size(113, 23);
@@ -155,7 +155,6 @@
             this.planificaciónToolStripMenuItem1,
             this.verTrabajosToolStripMenuItem,
             this.copiasCompartidasToolStripMenuItem,
-            this.compartidoConmigoToolStripMenuItem,
             this.opcionesDeCuentaToolStripMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
             this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
@@ -198,12 +197,6 @@
             this.copiasCompartidasToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.copiasCompartidasToolStripMenuItem.Text = "Copias compartidas";
             this.copiasCompartidasToolStripMenuItem.Click += new System.EventHandler(this.copiasCompartidasToolStripMenuItem_Click);
-            // 
-            // compartidoConmigoToolStripMenuItem
-            // 
-            this.compartidoConmigoToolStripMenuItem.Name = "compartidoConmigoToolStripMenuItem";
-            this.compartidoConmigoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.compartidoConmigoToolStripMenuItem.Text = "Compartido conmigo";
             // 
             // opcionesDeCuentaToolStripMenuItem
             // 
@@ -337,7 +330,6 @@
         private System.Windows.Forms.ToolStripMenuItem opcionesDeCuentaToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem copiasCompartidasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem compartidoConmigoToolStripMenuItem;
         private System.Windows.Forms.Button button2;
     }
 }

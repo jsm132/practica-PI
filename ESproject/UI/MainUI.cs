@@ -88,8 +88,22 @@ namespace ESproject.UI
         }
 
         private void restoreBackup_button_Click(object sender, EventArgs e) {
-            if(backup_list.SelectedItem != null){
-                ESproject.Work.restoreBackup(backup_list.SelectedItem.ToString());
+
+            string files = "";
+
+            if (backup_list.SelectedItem != null){
+
+                using (var fbd = new FolderBrowserDialog())
+                {
+                    DialogResult result = fbd.ShowDialog();
+
+                    if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                    {
+                        files = fbd.SelectedPath;
+
+                    }
+                }
+                ESproject.Work.restoreBackup(backup_list.SelectedItem.ToString(), files);
             }
         }
 
@@ -117,6 +131,8 @@ namespace ESproject.UI
         private void backup_list_SelectedIndexChanged(object sender, EventArgs e)
         {
             button1.Enabled = true;
+            restoreBackup_button.Enabled = true;
+
             if (backup_list.SelectedItem != null)
             {
                 backupName_textbox.Text = backup_list.SelectedItem.ToString().Split('_')[0];
@@ -154,6 +170,11 @@ namespace ESproject.UI
         private void button2_Click(object sender, EventArgs e)
         {
             Form sharedWithMe = new SharedWithMe();
+        }
+
+        private void compartidoConmigoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
