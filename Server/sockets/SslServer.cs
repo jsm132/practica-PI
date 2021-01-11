@@ -380,6 +380,7 @@ namespace Server {
                     using (FileStream fs = File.Create(path + "\\plans.json"))
                     {
                         byte[] info = new UTF8Encoding(true).GetBytes("[]");
+                        
                         fs.Write(info, 0, info.Length);
                     }
                 }

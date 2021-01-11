@@ -1,5 +1,1 @@
-[{ "mail": "ejemplo@gmail.com", "salt": "5a1326d0a929beda9020c40993e7dfd7" },
-    { "mail": "a@a.com", "salt": "c7a6db0d9d787e2b32b016adec03276d" },
-    { "mail": "b@b.com", "salt": "8d47b31dd49e95d3490750ef4f5112e2" },
-    { "mail": "final@gmail.com", "salt": "23a00f695511b02482228de10328a807" }
-]
+[{"mail":"ejemplo@gmail.com","salt":"5a1326d0a929beda9020c40993e7dfd7"},{"mail":"a@a.com","salt":"c7a6db0d9d787e2b32b016adec03276d"},{"mail":"b@b.com","salt":"8d47b31dd49e95d3490750ef4f5112e2"},{"mail":"final@gmail.com","salt":"23a00f695511b02482228de10328a807"},{"mail":"entrega@gmail.com","salt":"56a0d29fede243cb80a5e05ea9c58753"},{"mail":"entrega@gmail.com","salt":"35bc2dfddb9d1168041e24e2dd0fc842"},{"mail":"compartir@gmail.com","salt":"17dc95208ce47002dc7bbeff5e9c38c0"}]

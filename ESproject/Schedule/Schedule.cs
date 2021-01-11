@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ESproject.Cifrado;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,10 +47,13 @@ namespace ESproject.Schedule
             string file = System.IO.File.ReadAllText(pathPlan);
             string user = User.getName();
 
+            Crypto cryp = new Crypto("aes", User.)
+
             Messages.ClientMessage message = new Messages.ClientMessage();
             message.action = "schedule";
             message.message.Add("file", file);
             message.message.Add("user", user);
+            message.message.Add("crypto", cryp);
 
             string scheduleMessage = JsonConvert.SerializeObject(message);
 
